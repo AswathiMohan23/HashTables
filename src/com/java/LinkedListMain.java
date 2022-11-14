@@ -11,10 +11,14 @@ public class LinkedListMain {
     }
 
     public static void findFrequency() {
-        String sentence = "To be or not to be";
+        long code=0;
+        String sentence = "“Paranoids are not paranoid because they are paranoid but because they keep \n" +
+                "putting themselves deliberately into paranoid avoidable situations";
         sentence=sentence.toLowerCase();
        // char words=sentence.charAt()
         LinkedList<String> list=new LinkedList<>();
+        LinkedList<String> secondList=new LinkedList<>();
+
         String array[] = sentence.split(" ");
         for(int i=0;i<array.length;i++){
             list.add(array[i]);
@@ -27,7 +31,12 @@ public class LinkedListMain {
                 mapWords.put(i, 1);
             }
         }
-        System.out.println(mapWords);
+        System.out.println("frequency of words in he given sentence : "+mapWords);
+        for(int i=0;i<array.length;i++) {
+            code = list.get(i).hashCode();
+            secondList.add(String.valueOf(code));
+            System.out.println("hash code of " + secondList.get(i) + " : " + secondList.get(i).hashCode());
+        }
     }
 
 }
